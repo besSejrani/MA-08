@@ -38,9 +38,9 @@ GO
 
 -- Create database
 CREATE DATABASE Ecommerce ON  PRIMARY 
-( NAME = 'Ecommerce_data', FILENAME = 'C:\files\Ecommerce.mdf' , SIZE = 20480KB , MAXSIZE = 51200KB , FILEGROWTH = 1024KB )
+( NAME = 'Ecommerce_data', FILENAME = 'C:\files\MSSQL\Ecommerce.mdf' , SIZE = 20480KB , MAXSIZE = 51200KB , FILEGROWTH = 1024KB )
  LOG ON 
-( NAME = 'Ecommerce_log', FILENAME = 'C:\files\Ecommerce.ldf' , SIZE = 10240KB , MAXSIZE = 20480KB , FILEGROWTH = 1024KB )
+( NAME = 'Ecommerce_log', FILENAME = 'C:\files\MSSQL\Ecommerce.ldf' , SIZE = 10240KB , MAXSIZE = 20480KB , FILEGROWTH = 1024KB )
 GO
 
 ---------------------------------------------------------------
