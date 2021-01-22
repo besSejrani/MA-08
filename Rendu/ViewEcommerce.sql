@@ -1,6 +1,8 @@
+-- Select Ecommerce database
 Use Ecommerce
 GO
 
+-- Select all columns and create a view of it
 CREATE VIEW [EcommerceCounter] AS 
 Select COUNT(users.id) AS Users,
 (Select COUNT(id) FROM roles) AS Roles, 

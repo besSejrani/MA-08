@@ -5,8 +5,10 @@
 
 ---------------------------------------------------------------
 
+-- Select Master database
 USE master
 GO
+
 -- Delete database if it exists
 IF (EXISTS (SELECT name FROM master.dbo.sysdatabases WHERE name = 'Ecommerce'))
 BEGIN
@@ -115,11 +117,9 @@ create table orders (
 
 create table products (
     id int identity(1,1) not null primary key,
-    name_francais varchar(50) not null,
+    name varchar(50) not null,
     description_francais varchar(50) not null,
-    name_deutsch varchar(50) not null,
     description_deutsch varchar(50) not null,
-    name_english varchar(50) not null,
     description_english varchar(50) not null,
     price int not null,
 )
