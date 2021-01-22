@@ -4,7 +4,7 @@
 Avant de pouvoir lancer le script, il faut s'assurer d'avoir préalablement installé Node.js sur sa machine. Il est conseillé d'installer la version LTS.
 
 ## Installation Packages
-Une fois que Node.js ets installé, il faut se rendre sur le répertoire.
+Une fois que Node.js est installé, il faut se rendre sur le répertoire.
 
 > cd ./Script
 
