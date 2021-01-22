@@ -87,7 +87,7 @@ create table events (
     start_date date not null,
     end_date date not null, 
     city varchar(50),
-    zipcode varchar(50),
+    zip varchar(50),
     lat geography,
     lng geography,
     created_at datetime,
