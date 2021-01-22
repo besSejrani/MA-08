@@ -49,6 +49,9 @@ GO
 
 -- Tables
 
+CREATE DATABASE Ecommerce
+GO
+
 USE Ecommerce
 GO
 
@@ -70,13 +73,13 @@ create table pages (
     title varchar(50) not null,
     description varchar(250) not null,
     url_page varchar(8000) not null,
-    created_at datetime,
-    updated_at datetime
+    created_at date,
+    updated_at date
 )
 
 create table roles (
     id int identity (1,1) not null primary key,
-    name varchar(50) not null
+    name varchar(50) not null default 'user'
 )
 
 create table events (
@@ -90,29 +93,29 @@ create table events (
     zip varchar(50),
     lat geography,
     lng geography,
-    created_at datetime,
-    updated_at datetime
+    created_at date,
+    updated_at date
 )
 
 create table carts (
     id int identity(1,1) not null primary key,
-    created_at datetime,
-    updated_at datetime
+    created_at date,
+    updated_at date
 )
 
 create table discounts (
     id int identity(1,1) not null primary key,
     rebate bit not null,
-    from_date datetime not null,
-    to_date datetime not null,
-    created_at datetime not null
+    from_date date not null,
+    to_date date not null,
+    created_at date not null
 )
 
 create table orders (
     id int identity(1,1) not null primary key,
     total_amount decimal not null,
     tracking_number VARCHAR(8000),
-    created_at datetime not null
+    created_at date not null
 )
 
 create table products (
@@ -152,7 +155,7 @@ create table products_add_carts (
 create table users_own_carts (
     id int identity(1,1) not null primary key,
     user_id int foreign key (user_id) REFERENCES users(id),
-    event_id int foreign key (event_id) REFERENCES events(id),
+    cart_id int foreign key (cart_id) REFERENCES events(id),
 )
 
 create table users_participate_events (

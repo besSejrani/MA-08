@@ -1,3 +1,10 @@
+-- title:   View Ecomemrce.sql
+-- Date:    21.01.2021
+-- Author:  Besjan Sejrani
+-- Goal:    Create ecommerce database for school project
+
+---------------------------------------------------------------
+
 -- Select Ecommerce database
 Use Ecommerce
 GO
