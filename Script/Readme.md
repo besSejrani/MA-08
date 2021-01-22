@@ -8,7 +8,7 @@ Si tout le processus a été effectuer à l'aide de la ligne de commande, pensez
 
 Afin de vérifier si node a bien été installé, effectuer la commande suivante.
 
-> npm -v
+> node -v
 
 ## Installation Packages
 
