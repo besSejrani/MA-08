@@ -1,15 +1,22 @@
 import faker from "faker"
 import fs from "fs"
 
-export const createSuppliers = () => {
+export const createSuppliers = (nomberRows) => {
 
-    for(let i=0; i<=100; i++){
+    fs.appendFile("../Rendu/FillDatabase Ecommerce.sql",`--Generates suppliers entries \n`, (err) => {
+        if (err) console.log('The lyrics were updated!');
+    })
 
-        //Generates 100 suppliers entries
+    for(let i=0; i<=nomberRows; i++){
+
+        //Generates suppliers entries
         const suppliers = `insert into suppliers (name, email, address, phone, country) VALUES('${faker.company.companyName().replace("'", "")}', '${faker.internet.email()}', '${faker.address.streetAddress().replace("'", "")}', '${faker.phone.phoneNumber().replace("'", "")}', '${faker.address.country().replace("'", "")}')`
 
         fs.appendFile("../Rendu/FillDatabase Ecommerce.sql",`${suppliers} \n`, (err) => {
             if (err) console.log('The lyrics were updated!');
         })
     }
+    fs.appendFile("../Rendu/FillDatabase Ecommerce.sql",`\n\n\n\n`, (err) => {
+        if (err) console.log('The lyrics were updated!');
+    })
 }

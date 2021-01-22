@@ -1,15 +1,22 @@
 import faker from "faker"
 import fs from "fs"
 
-export const createProducts = () => {
+export const createProducts = (nomberRows) => {
 
-    for(let i=0; i<=100; i++){
+    fs.appendFile("../Rendu/FillDatabase Ecommerce.sql",`--Generates products entries \n`, (err) => {
+        if (err) console.log('The lyrics were updated!');
+    })
 
-        //Generates 100 products entries
+    for(let i=0; i<=nomberRows; i++){
+
+        //Generates products entries
         const products = `insert into products (name, description_francais, description_deutsch, description_english, price) VALUES('${faker.commerce.productName()}','${faker.commerce.productDescription().replace("'", "")}', '${faker.commerce.productDescription().replace("'", "")}', '${faker.commerce.productDescription().replace("'", "")}', '${Math.floor(Math.random()*1000 + 1)}')`   
         
         fs.appendFile("../Rendu/FillDatabase Ecommerce.sql",`${products} \n`, (err) => {
             if (err) console.log('The lyrics were updated!');
         })
     }
+    fs.appendFile("../Rendu/FillDatabase Ecommerce.sql",`\n\n\n\n`, (err) => {
+        if (err) console.log('The lyrics were updated!');
+    })
 }
