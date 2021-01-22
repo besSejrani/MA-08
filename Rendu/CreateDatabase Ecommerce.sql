@@ -145,54 +145,54 @@ create table suppliers_supply_products (
 
 create table products_add_carts (
     id int identity(1,1) not null primary key,
-    cart_id int foreign key (cart_id) REFERENCES carts(id) on delete cascade,
-    product_id int foreign key (product_id) REFERENCES products(id) on delete cascade,
+    cart_id int foreign key (cart_id) REFERENCES carts(id),
+    product_id int foreign key (product_id) REFERENCES products(id),
 )
 
 create table users_own_carts (
     id int identity(1,1) not null primary key,
-    user_id int foreign key (user_id) REFERENCES users(id) on delete cascade,
-    event_id int foreign key (event_id) REFERENCES events(id) on delete cascade,
+    user_id int foreign key (user_id) REFERENCES users(id),
+    event_id int foreign key (event_id) REFERENCES events(id),
 )
 
 create table users_participate_events (
     id int identity(1,1) not null primary key,
-    user_id int foreign key (user_id) REFERENCES users(id) on delete cascade,
-    event_id int foreign key (event_id) REFERENCES events(id) on delete cascade,
+    user_id int foreign key (user_id) REFERENCES users(id),
+    event_id int foreign key (event_id) REFERENCES events(id),
 )
 
 create table users_has_roles (
     id int identity(1,1) not null primary key,
-    user_id int foreign key (user_id) REFERENCES users(id) on delete cascade,
-    role_id int foreign key (role_id) REFERENCES roles(id) on delete cascade,
+    user_id int foreign key (user_id) REFERENCES users(id),
+    role_id int foreign key (role_id) REFERENCES roles(id),
 )
 
 create table users_configure_pages (
     id int identity(1,1) not null primary key,
-    user_id int foreign key (user_id) REFERENCES users(id) on delete cascade,
-    page_id int foreign key (page_id) REFERENCES pages(id) on delete cascade,
+    user_id int foreign key (user_id) REFERENCES users(id),
+    page_id int foreign key (page_id) REFERENCES pages(id),
 )
 
 create table users_create_discounts (
     id int identity(1,1) not null primary key,
-    user_id int foreign key (user_id) REFERENCES users(id) on delete cascade,
-    discount_id int foreign key (discount_id) REFERENCES discounts(id) on delete cascade,
+    user_id int foreign key (user_id) REFERENCES users(id),
+    discount_id int foreign key (discount_id) REFERENCES discounts(id),
 )
 
 create table users_perform_orders (
     id int identity(1,1) not null primary key,
-    user_id int foreign key (user_id) REFERENCES users(id) on delete cascade,
-    order_id int foreign key (order_id) REFERENCES orders(id) on delete cascade,
+    user_id int foreign key (user_id) REFERENCES users(id),
+    order_id int foreign key (order_id) REFERENCES orders(id),
 )
 
 create table orders_apply_discounts (
     id int identity(1,1) not null primary key,
-    discount_id int foreign key (discount_id) REFERENCES discounts(id) on delete cascade,
-    order_id int foreign key (order_id) REFERENCES orders(id) on delete cascade,
+    discount_id int foreign key (discount_id) REFERENCES discounts(id),
+    order_id int foreign key (order_id) REFERENCES orders(id),
 )
 
 create table orders_contain_products (
     id int identity(1,1) not null primary key,
-    order_id int foreign key (order_id) REFERENCES orders(id) on delete cascade,
-    product_id int foreign key (product_id) REFERENCES products(id) on delete cascade,
+    order_id int foreign key (order_id) REFERENCES orders(id),
+    product_id int foreign key (product_id) REFERENCES products(id),
 )
