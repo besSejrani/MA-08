@@ -23,7 +23,7 @@ fs.writeFile("../Rendu/FillDatabase Ecommerce.sql","", ()=>{
      if (err) console.log('The lyrics were updated!');
  })
 
-fs.appendFileSync("../Rendu/FillDatabase Ecommerce.sql",`USE Master\nGO \n\n`, (err) => {
+fs.appendFileSync("../Rendu/FillDatabase Ecommerce.sql",`USE Ecommerce\nGO \n\n`, (err) => {
     if (err) console.log('The lyrics were updated!');
 })
 
