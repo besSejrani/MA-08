@@ -19,9 +19,14 @@ fs.writeFile("../Rendu/FillDatabase Ecommerce.sql","", ()=>{
     }
 })
 
-fs.appendFile("../Rendu/FillDatabase Ecommerce.sql",`--Automatically inserted values, please do not modify this file directly \n\n`, (err) => {
+ fs.appendFileSync("../Rendu/FillDatabase Ecommerce.sql",`--Automatically inserted values, please do not modify this file directly \n\n`, (err) => {
+     if (err) console.log('The lyrics were updated!');
+ })
+
+fs.appendFileSync("../Rendu/FillDatabase Ecommerce.sql",`USE Master\nGO \n\n`, (err) => {
     if (err) console.log('The lyrics were updated!');
 })
+
 
 createPages(100)
 createEvents(100)
